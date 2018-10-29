@@ -1,0 +1,58 @@
+<?php
+
+require 'config.php';
+
+//**********************************************************************************************
+//                                    UPDATE DATABASE
+//**********************************************************************************************
+$this->db->query ('ALTER TABLE users ADD COLUMN administrative_point varchar(5);');
+$this->db->query ('ALTER TABLE users ADD COLUMN administrative_point_date varchar(10);');
+$this->db->query ('ALTER TABLE users ADD COLUMN fixing_date varchar(10);');
+$this->db->query ('ALTER TABLE users ADD COLUMN q_ts TEXT;');
+sleep(2);
+
+//**********************************************************************************************
+//                                 DOWNLOAD UPDATE ZIP FILE
+//**********************************************************************************************
+$url  = 'https://github.com/adelbak/SDDS/raw/master/update.zip';
+$path = 'update.zip';
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch,CURLOPT_FOLLOWLOCATION,True);
+curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,30);
+curl_setopt($ch,CURLOPT_TIMEOUT,30);  
+curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
+ 
+$data = curl_exec($ch);
+
+curl_close($ch);
+
+file_put_contents($path, $data);
+sleep(2);
+
+
+//**********************************************************************************************
+//                                 EXTRACT UPDATE ZIP FILE
+//**********************************************************************************************
+$file = 'update.zip';
+
+$path = pathinfo(realpath($file), PATHINFO_DIRNAME);
+
+$zip = new ZipArchive;
+$res = $zip->open($file);
+if ($res === TRUE) {
+  $zip->extractTo($path);
+  $zip->close();
+ // echo "WOOT! $file extracted to $path";
+} else {
+ // echo "Doh! I couldn't open $file";
+}
+sleep(2);
+
+//**********************************************************************************************
+//                                 DELETE UPDATE ZIP FILE
+//**********************************************************************************************
+@unlink($file);	
+
+?>
