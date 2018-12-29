@@ -9,7 +9,7 @@ if (APP_VERSION == '1.0') {
 $this->db->query ('ALTER TABLE students ADD COLUMN deleted BLOB DEFAULT 0;');
 $this->db->query ('ALTER TABLE students ADD COLUMN delete_reason varchar(255);');
 $this->db->query ('ALTER TABLE students ADD COLUMN delete_date varchar(10);');
-
+$this->db->query ("update students set deleted = '0';");
 sleep(2);
 }
 //**********************************************************************************************
