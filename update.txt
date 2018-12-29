@@ -5,12 +5,13 @@ require 'config.php';
 //**********************************************************************************************
 //                                    UPDATE DATABASE
 //**********************************************************************************************
-$this->db->query ('ALTER TABLE users ADD COLUMN administrative_point varchar(5);');
-$this->db->query ('ALTER TABLE users ADD COLUMN administrative_point_date varchar(10);');
-$this->db->query ('ALTER TABLE users ADD COLUMN fixing_date varchar(10);');
-$this->db->query ('ALTER TABLE users ADD COLUMN q_ts TEXT;');
-sleep(2);
+if (APP_VERSION == '1.0') {
+$this->db->query ('ALTER TABLE students ADD COLUMN deleted BLOB DEFAULT 0;');
+$this->db->query ('ALTER TABLE students ADD COLUMN delete_reason varchar(255);');
+$this->db->query ('ALTER TABLE students ADD COLUMN delete_date varchar(10);');
 
+sleep(2);
+}
 //**********************************************************************************************
 //                                 DOWNLOAD UPDATE ZIP FILE
 //**********************************************************************************************
