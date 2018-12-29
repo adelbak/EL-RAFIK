@@ -17,8 +17,8 @@ if (APP_VERSION == '1.0') {
     $files = [
         // Core
         DIR_CORE . '/class.cem.php',
-        DIR_CORE . '/core/class.lycee.php',
-        DIR_CORE . '/core/class.prem.php',
+        DIR_CORE . '/class.lycee.php',
+        DIR_CORE . '/class.prem.php',
         // Mods
         DIR_MODS . '/cem_notes.php',
         DIR_MODS . '/lycee_notes.php',
