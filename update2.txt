@@ -1,2 +1,2 @@
-1.4|<h1><span style="background-color: #ff0000; color: #ffffff;"><strong>تحديث تصحيحي تحت رقم 1.4</strong></span><br />1- تعديل بسيط على بعض الشهادات المستخرجة.<br /><strong><span style="background-color: #008000; color: #ffffff;">التحديث الشامل سيكون بعد أيام وسيحتوي على نظام تجريبي لتحليل النتائج.</span></strong></h1>
-<h3><span style="color: #ff0000;"><strong> دمتم أوفياء للرفيق.</strong></span></h3>|https://pastebin.com/raw/2sZ2EN3j|ADELQCEM112019DZ17HBB
+1.5|<h4><span style="background-color: #ff0000; color: #ffffff;"><strong>تحديث تصحيحي تحت رقم 1.5</strong></span><br />1- تحديث خاصية جلب كود التحقق أثناء عملية الاستيراد.<br /><strong><span style="background-color: #008000; color: #ffffff;">التحديث الشامل سيكون بعد أيام وسيحتوي على نظام تجريبي لتحليل النتائج.</span></strong></h4>
+<h4><span style="color: #ff0000;"><strong> دمتم أوفياء للرفيق.</strong></span></h4>|https://pastebin.com/raw/2sZ2EN3j|ADELQCEM112019DZ17HBB
