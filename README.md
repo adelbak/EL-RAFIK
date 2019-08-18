@@ -1,3 +1,3 @@
-# SDDS
+# برنامج الرفيق
 
-School Digital Director
+برنامج الرفيق
