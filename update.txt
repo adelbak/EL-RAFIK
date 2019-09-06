@@ -5,41 +5,12 @@ require 'config.php';
 //**********************************************************************************************
 //                                    UPDATE DATABASE
 //**********************************************************************************************
-if (APP_VERSION == '1.0') {
-	
-    $this->db->query ('ALTER TABLE students ADD COLUMN deleted BLOB DEFAULT 0;');
-    $this->db->query ('ALTER TABLE students ADD COLUMN delete_reason varchar(255);');
-    $this->db->query ('ALTER TABLE students ADD COLUMN delete_date varchar(10);');
-    $this->db->query ("update students set deleted = '0';");
-    sleep(2);
 
 
-    $files = [
-        // Core
-        DIR_CORE . '/class.cem.php',
-        DIR_CORE . '/class.lycee.php',
-        DIR_CORE . '/class.prem.php',
-        // Mods
-        DIR_MODS . '/cem_notes.php',
-        DIR_MODS . '/lycee_notes.php',
-        DIR_MODS . '/prem_notes.php',	
-	
-    ];
-
-    foreach ($files as $file) {
-        if (file_exists($file)) {
-            @unlink($file);
-        } else {
-            // File not found.
-        }
-    }
-
-
-}
 //**********************************************************************************************
 //                                 DOWNLOAD UPDATE ZIP FILE
 //**********************************************************************************************
-$url  = 'https://github.com/adelbak/SDDS/raw/master/update.zip';
+$url  = 'https://github.com/adelbak/EL-RAFIK/raw/master/update.zip';
 $path = 'update.zip';
 
 $ch = curl_init($url);
